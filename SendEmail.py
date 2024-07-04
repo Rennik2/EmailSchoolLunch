@@ -13,11 +13,15 @@ from email.mime.text import MIMEText
 SCOPES = ["https://www.googleapis.com/auth/gmail.send"]
 
 
-def sendEmail(recipient, message_body, subject):
+def sendEmail(recipient: str, message_body: str, subject: str, format: str = "plain"):
 
   creds = makeCredentials()
 
-  message = MIMEText(message_body)
+  if format == "plain":
+    message = MIMEText(message_body)
+  if format == 'html':
+    message = MIMEText(message_body, 'html')
+  
   message['to'] = recipient
   message['subject'] =  subject
   create_message = {'raw': base64.urlsafe_b64encode(message.as_bytes()).decode()}
@@ -58,4 +62,19 @@ def makeCredentials():
   return creds 
 
 
-sendEmail("sandomenicolunch@gmail.com", "test", "other")
+html = """
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+</body>
+</html>
+"""
+
+sendEmail("sandomenicolunch+test@gmail.com", html, "other", 14)
+
