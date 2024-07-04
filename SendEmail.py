@@ -64,15 +64,12 @@ def makeCredentials():
 
 html = """
 <html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
+  <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+  <h1>This is a Heading</h1>
+  <p>This is a paragraph.</p>
 
-</body>
+  </body>
 </html>
 """
 
