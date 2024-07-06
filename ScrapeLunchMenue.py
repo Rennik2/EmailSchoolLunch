@@ -19,5 +19,3 @@ def scrape_lunch_table_task(driver: Driver, data):
         "html": html[table_start:table_end]
     }     
 
-# Initiate the web scraping task
-scrape_lunch_table_task()
