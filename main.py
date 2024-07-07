@@ -13,9 +13,10 @@ html = """
   </body>
 </html>
 """
-SendEmail.sendEmail("sandomenicolunch+test@gmail.com", html, "other", "html")
 
 
+LunchToDay = ScrapeLunchMenue.scrape_lunch_table_task()
 
-ScrapeLunchMenue.scrape_lunch_table_task()
+SendEmail.send_email("sandomenicolunch+test@gmail.com", LunchToDay, "other", "html")
+
 
