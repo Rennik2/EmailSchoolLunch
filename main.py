@@ -1,22 +1,13 @@
-
-import ScrapeLunchMenue
+import datetime
+import ScrapeLunchMenu
 import SendEmail 
 
 
-html = """
-<html>
-  <body>
+today = datetime.date.today().strftime("%A")
+LunchToDay_html = ScrapeLunchMenu.scrape_lunch_table_task()
 
-  <h1>This is a Heading</h1>
-  <p>This is a paragraph pt2.</p>
+Subject = today + "'s Menu"
 
-  </body>
-</html>
-"""
-
-
-LunchToDay = ScrapeLunchMenue.scrape_lunch_table_task()
-
-SendEmail.send_email("sandomenicolunch+test@gmail.com", LunchToDay, "other", "html")
+SendEmail.send_email("sandomenicolunch+test@gmail.com", LunchToDay_html, Subject, "html")
 
 
