@@ -17,10 +17,7 @@ def send_email(recipient: str, message_body: str, subject: str, format: str = "p
 
   creds = make_credentials()
 
-  if format == "plain":
-    message = MIMEText(message_body)
-  if format == 'html':
-    message = MIMEText(message_body, 'html')
+  message = MIMEText(message_body, format)
   
   message['to'] = recipient
   message['subject'] =  subject
@@ -31,10 +28,9 @@ def send_email(recipient: str, message_body: str, subject: str, format: str = "p
     service = build("gmail", "v1", credentials=creds)
 
     message = (service.users().messages().send(userId = "me", body = create_message).execute())
-    print('Message sent succesfuly!')
+    print('Message sent succesfuly to ' + recipient)
 
   except HttpError as error:
-    # TODO(developer) - Handle errors from gmail API.
     print(f"An error occurred: {error}")
 
 
