@@ -1,3 +1,5 @@
+needs google chrome installed
+
 pip install these things: 
 
 google-api-python-client 
@@ -5,3 +7,5 @@ google-auth-httplib2
 google-auth-oauthlib
 botasaurus
 BeautifulSoup
+
+
