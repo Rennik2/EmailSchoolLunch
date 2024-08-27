@@ -10,13 +10,10 @@ def scrape_lunch_table_task(driver: Driver, data):
     html = (BeautifulSoup(driver.page_html, "html.parser")).prettify()
 
     TableStart = html.find('id="elementor-tab-content-127' + str(day_number()) + '"') 
-    TableStart = TableStart + html[TableStart:].find('>') + 1       # don't include the <dic> line
+    TableStart = TableStart + html[TableStart:].find('>') + 1       # don't include the <dic> line of html code
     TableEnd = html[TableStart:].find('</div>') + TableStart
 
     Table = html[TableStart:TableEnd]
-
-    # print(Table)
-    # print(TableStart, TableEnd)
 
     # Save the data as a JSON file in output/scrape_lunch_table_task.json
     return Table

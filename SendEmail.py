@@ -36,11 +36,6 @@ def send_email(recipient: str, message_body: str, subject: str, format: str = "p
 
 def make_credentials():
   creds = None
-  # The file token.json stores the user's access and refresh tokens, and is
-  # created automatically when the authorization flow completes for the first
-  # time.
-  if os.path.exists("token.json"):
-    creds = Credentials.from_authorized_user_file("token.json", SCOPES)
 
   # If there are no (valid) credentials available, let the user log in.
   if not creds or not creds.valid:
@@ -54,6 +49,10 @@ def make_credentials():
     # Save the credentials for the next run
     with open("token.json", "w") as token:
       token.write(creds.to_json())
+
+
+  if os.path.exists("token.json"):
+    creds = Credentials.from_authorized_user_file("token.json", SCOPES)
 
   return creds 
 
