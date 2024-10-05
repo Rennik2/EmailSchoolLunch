@@ -21,7 +21,6 @@ def scrape_lunch_table_task(driver: Driver, data):
 
 def day_number():
     today = datetime.date.today().strftime("%A")
-    # today = "Monday"
 
     if today   == "Monday":     return 1
     elif today == "Tuesday":    return 2

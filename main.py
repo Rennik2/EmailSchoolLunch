@@ -1,8 +1,9 @@
-import datetime
-import ScrapeLunchMenu
-import SendEmail 
+import datetime 
 import schedule
 import time 
+
+import ScrapeLunchMenu
+import SendEmail 
 
 def send_lunch_menu():
     today = datetime.date.today().strftime("%A") 
@@ -19,7 +20,7 @@ def send_lunch_menu():
 
 
 
-schedule.every().day.at("07:30").do(send_lunch_menu)
+schedule.every().day.at("11:14").do(send_lunch_menu)
 
 try: 
     print("Terminate programe with Ctrl+C")
