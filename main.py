@@ -19,20 +19,21 @@ def send_lunch_menu():
                 print(f"Email doesn't work: {email}")
 
 
+send_lunch_menu()
 
-schedule.every().day.at("11:14").do(send_lunch_menu)
+# schedule.every().day.at("11:14").do(send_lunch_menu)
 
-try: 
-    print("Terminate programe with Ctrl+C")
+# try: 
+#     print("Terminate programe with Ctrl+C")
 
-    while True:
-        try:
-            schedule.run_pending()
-            time.sleep(10)
+#     while True:
+#         try:
+#             schedule.run_pending()
+#             time.sleep(10)
             
-        except Exception as e:
-            SendEmail.send_email("sandomenicolunch+error@gmail.com", str(e), "AN ERROR ACCURRED")
-            print(f"An error occurred: {e}")
-except KeyboardInterrupt:
-    SendEmail.send_email("sandomenicolunch+error@gmail.com", "Program terminated by user", "AN ERROR ACCURRED")
-    print("Program terminated by user")
+#         except Exception as e:
+#             SendEmail.send_email("sandomenicolunch+error@gmail.com", str(e), "AN ERROR ACCURRED")
+#             print(f"An error occurred: {e}")
+# except KeyboardInterrupt:
+#     SendEmail.send_email("sandomenicolunch+error@gmail.com", "Program terminated by user", "AN ERROR ACCURRED")
+#     print("Program terminated by user")
