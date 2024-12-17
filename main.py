@@ -1,5 +1,5 @@
 import datetime 
-import schedule
+#import schedule
 import time 
 
 import ScrapeLunchMenu
