@@ -2,13 +2,9 @@ needs google chrome installed
 
 pip install these things: 
 
-google-api-python-client 
-google-auth-httplib2 
-google-auth-oauthlib
 botasaurus
-BeautifulSoup
+BeautifulSoup4
 schedule
-base64
 time
 
 git clone https://github.com/mailjet/mailjet-apiv3-python
