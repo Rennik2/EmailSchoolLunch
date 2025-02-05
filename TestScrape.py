@@ -16,7 +16,7 @@ def scrape_lunch_table_task(driver: Driver, data):
 
     Table = html[TableStart:TableEnd]
     
-    SendEmail.send_email("sandomenicolunch+test@gmail.com", html, "test", "html")
+    SendEmail.send_email("sandomenicolunch+test@gmail.com", driver.page_html, "test", "html")
     # Save the data as a JSON file in output/scrape_lunch_table_task.json
     return Table
 

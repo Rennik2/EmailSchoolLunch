@@ -11,3 +11,6 @@ schedule
 base64
 time
 
+git clone https://github.com/mailjet/mailjet-apiv3-python
+cd mailjet-apiv3-python
+pip install .

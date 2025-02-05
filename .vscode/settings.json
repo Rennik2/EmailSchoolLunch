@@ -1,0 +1,9 @@
+{
+    "python.analysis.extraPaths": [
+        "./mailjet-apiv3-python"
+    ],
+    "cSpell.words": [
+        "APIKEY",
+        "mailjet"
+    ]
+}
