@@ -3,7 +3,7 @@ import datetime
 import time 
 
 import ScrapeLunchMenu
-import SendEmail 
+import MailJet 
 
 def send_lunch_menu():
     today = datetime.date.today().strftime("%A") 
@@ -14,7 +14,7 @@ def send_lunch_menu():
     with open("TestEmailList.txt", 'r') as file:
         for email in file.readlines():
             if email.find('@') != -1 and email[email.find('@'):].find('.') != -1: # check if its an email. Could be better
-                SendEmail.send_email(email, LunchToDay_html_table, Subject, "html")
+                MailJet.send_email(email, LunchToDay_html_table, Subject, "html")
             else:
                 print(f"Email doesn't work: {email}")
 
