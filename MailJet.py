@@ -3,8 +3,8 @@ from mailjet_rest import Client
 import os
 
 # Get your environment Mailjet keys
-# api_key = os.environ['MJ_APIKEY_PUBLIC']
-# api_secret = os.environ['MJ_APIKEY_PRIVATE']
+api_key = os.environ['MJ_APIKEY_PUBLIC']
+api_secret = os.environ['MJ_APIKEY_PRIVATE']
 
 
 from_email = "sandomenicolunch@gmail.com"

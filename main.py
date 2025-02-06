@@ -1,5 +1,5 @@
 import datetime 
-#import schedule
+import schedule
 import time 
 
 import ScrapeLunchMenu
@@ -21,19 +21,19 @@ def send_lunch_menu():
 
 send_lunch_menu()
 
-# schedule.every().day.at("11:14").do(send_lunch_menu)
+schedule.every().day.at("6:00").do(send_lunch_menu)
 
-# try: 
-#     print("Terminate programe with Ctrl+C")
+try: 
+    print("Terminate program with Ctrl+C")
 
-#     while True:
-#         try:
-#             schedule.run_pending()
-#             time.sleep(10)
+    while True:
+        try:
+            schedule.run_pending()
+            time.sleep(1000)
             
-#         except Exception as e:
-#             SendEmail.send_email("sandomenicolunch+error@gmail.com", str(e), "AN ERROR ACCURRED")
-#             print(f"An error occurred: {e}")
-# except KeyboardInterrupt:
-#     SendEmail.send_email("sandomenicolunch+error@gmail.com", "Program terminated by user", "AN ERROR ACCURRED")
-#     print("Program terminated by user")
+        except Exception as e:
+            MailJet.send_email("sandomenicolunch+error@gmail.com", str(e), "AN ERROR OCCURRED")
+            print(f"An error occurred: {e}")
+except KeyboardInterrupt:
+    MailJet.send_email("sandomenicolunch+error@gmail.com", "Program terminated by user", "AN ERROR OCCURRED")
+    print("Program terminated by user")
