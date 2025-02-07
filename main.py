@@ -21,7 +21,7 @@ def send_lunch_menu():
 
 # send_lunch_menu()
 
-schedule.every().day.at("6:00").do(send_lunch_menu)
+schedule.every().day.at("06:00").do(send_lunch_menu)
 
 try: 
     print("Terminate program with Ctrl+C")
