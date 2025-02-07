@@ -3,7 +3,6 @@ needs google chrome installed
 pip install these things: 
 
 botasaurus
-BeautifulSoup4
 schedule
 time
 
