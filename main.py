@@ -19,7 +19,7 @@ def send_lunch_menu():
                 print(f"Email doesn't work: {email}")
 
 
-# send_lunch_menu()
+send_lunch_menu()
 
 schedule.every().day.at("06:00").do(send_lunch_menu)
 
